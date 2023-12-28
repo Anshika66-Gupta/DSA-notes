@@ -1,3 +1,4 @@
+//27-12-2023
 //var a = 12;
 //var b = 13;
 //var c = a + b;
@@ -22,3 +23,4 @@
 //fruits.pop();
 //document.getElementById("first").innerHTML = fruits;
 
+//28-12-2023
