@@ -25,33 +25,40 @@
 
 //28-12-2023
 
-//Stack example:-
+// Stack class
 class Stack {
-    Constructor(){
-        this.items = []; 
-    } 
-    //push element
-    push(element){
+    constructor() {
+        this.items = []; // Array to store stack elements
+    }
+
+    // Push element to the stack
+    push(element) {
         this.items.push(element);
     }
-    //pop element
-    pop(){
-        if(this.items.length === 0) {
-            return "Underflow";
+
+    // Pop element from the stack
+    pop() {
+        if (this.items.length === 0) {
+            return "Underflow"; // If stack is empty
         }
         return this.items.pop();
     }
-    peek(){
-        return this.items[this.items.length -1];
+
+    // Peek the top element of the stack
+    peek() {
+        return this.items[this.items.length - 1];
     }
-    isEmpty(){
-        return this.items.length ===0;
+
+    // Check if the stack is empty
+    isEmpty() {
+        return this.items.length === 0;
     }
-    
-    printStack(){
+
+    // Print the stack elements
+    printStack() {
         let str = "";
-        for (let i = 0; i < this.items.length; i++){
-            str += this.items[i] + ""
+        for (let i = 0; i < this.items.length; i++) {
+            str += this.items[i] + " ";
         }
         return str;
     }
@@ -59,59 +66,84 @@ class Stack {
 
 let stack = new Stack();
 
+// Pushing elements to the stack
 stack.push(10);
 stack.push(20);
 stack.push(30);
 
-console.log("Stack elements: ", stack.printStack());
-console.log("Popped elements: ", stack.pop());
-console.log("Top elements: ", stack.peek());
-console.log("Is stack empty ", stack.isEmpty());
+// Print the stack elements
+console.log("Stack elements:", stack.printStack()); // Output: 10 20 30
+
+// Pop an element from the stack
+console.log("Popped element:", stack.pop()); // Output: 30
+
+// Peek the top element of the stack
+console.log("Top element:", stack.peek()); // Output: 20
+
+// Check if stack is empty
+console.log("Is stack empty?", stack.isEmpty()); // Output: false
 
 
-//queue example
 
+// Queue class
 class Queue {
-    Constructor(){
-        this.items = []; 
-    } 
-    //enqueue element
-    enqueue(element){
+    constructor() {
+        this.items = []; // Array to store queue elements
+    }
+
+    // Enqueue element to the queue (add to the end)
+    enqueue(element) {
         this.items.push(element);
     }
-    //pop element
-    dequeue(){
-        if(this.isEmpty()) {
-            return "Underflow";
+
+    // Dequeue element from the queue (remove from the front)
+    dequeue() {
+        if (this.isEmpty()) {
+            return "Underflow"; // If queue is empty
         }
         return this.items.shift();
     }
-front(){
-        if(this.isEmpty()) {
-            return "No elements available";
+
+    // Peek the front element of the queue
+    front() {
+        if (this.isEmpty()) {
+            return "No elements in Queue"; // If queue is empty
         }
         return this.items[0];
     }
-    isEmpty(){
-        return this.items.length===0;
+
+    // Check if the queue is empty
+    isEmpty() {
+        return this.items.length === 0;
     }
-    
-    printQueue(){
+
+    // Print the queue elements
+    printQueue() {
         let str = "";
-        for (let i = 0; i < this.items.length; i++){
+        for (let i = 0; i < this.items.length; i++) {
             str += this.items[i] + " ";
         }
         return str;
     }
 }
 
-let queue = new Stack();
+let queue = new Queue();
 
+// Enqueue elements to the queue
 queue.enqueue(10);
 queue.enqueue(20);
 queue.enqueue(30);
 
-console.log("queue elements: ", queue.printQueue());
-console.log("dequeue elements: ", queue.dequeue());
-console.log("Front elements: ", queue.front());
-console.log("Is queue empty ", queue.isEmpty());
+// Print the queue elements
+console.log("Queue elements:", queue.printQueue()); // Output: 10 20 30
+
+// Dequeue an element from the queue
+console.log("Dequeued element:", queue.dequeue()); // Output: 10
+
+// Peek the front element of the queue
+console.log("Front element:", queue.front()); // Output: 20
+
+// Check if queue is empty
+console.log("Is queue empty?", queue.isEmpty()); // Output: false
+
+
